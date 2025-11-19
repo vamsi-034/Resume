@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JS-CSS-ANIMATION</title>
+    </head>
+    <body id="b">
+        <button onclick="move()" id="m">Move</button>
+       <div id="box">
+        <div id="ball"></div>
+       </div><br> 
+       <script>
+        let m=document.getElementById("m");
+        Object.assign(m.style,{
+            height:"20px",
+        });
+        document.getElementById("b").style.backgroundColor="lightblue";
+        let B=document.getElementById("box");
+        Object.assign(B.style,
+        {
+        border:"2px solid black",
+        width:"200xp",
+        height:"200px"
+        });
+        let a=document.getElementById("ball");
+        Object.assign(a.style,{
+            top:"35px",
+            left:"15px",
+            width:"50px",
+            height:"50px",
+            border:"2px solid red",
+            borderRadius:"50%",
+            backgroundColor:"red",
+            position:"absolute",
+        });
+        let pos=0;
+        let speed=2;
+        function move(){
+            pos+=speed;
+            a.style.left=pos+"px";
+            if(pos>670|| pos<=0){
+                speed=-speed;
+            }
+            requestAnimationFrame(move);
+        }
+       </script>
+    </body>
+</html>
