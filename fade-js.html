@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <button id="o1" onclick="opacit()">opacity</button>
+        <div id="f"></div>
+        <script>
+            let a=document.getElementById("f");
+            Object.assign(a.style,{
+                width:"500px",
+                height:"500px",
+                backgroundColor:"red",
+            });
+            function opacit(){
+                let o=0;
+                function fade(){
+                    o+=0.005;
+                    a.style.opacity=o;
+                    if(o<1){
+                        requestAnimationFrame(fade);
+                    }
+                }
+                fade();
+            }
+        </script>
+    </body>
+</html>
